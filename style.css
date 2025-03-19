@@ -1,0 +1,15 @@
+header{
+    margin: 2%;
+}
+
+.menuLateral{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+
+.menuLateral li{
+    list-style: none;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
