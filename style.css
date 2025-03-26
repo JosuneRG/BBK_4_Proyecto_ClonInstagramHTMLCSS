@@ -79,7 +79,7 @@ header {
     width: 60%;
     margin: 1vh auto 1vh; 
 }
-/*------------------------------------------------------- FIN MENU ---------------------------------------------------*/
+/*2 ------------------------------------------------------- Sección de perfil ---------------------------------------------------*/
 
 /* Contenido principal */
 main {
@@ -104,7 +104,7 @@ main {
     border: 0.2vw solid #DBDBDB;
 }
 
-/* -------------------------------- Información del perfil -------------------------------------------------*/
+/*3 -------------------------------- Información del perfil -------------------------------------------------*/
 .profile-info {
     list-style: none;
     padding-left: 5%;
@@ -176,53 +176,118 @@ main {
 }
 
 
-/* ------------------------------------- Sección de publicaciones ------------------------------------------*/
+/* 4 ------------------------------------- Sección de publicaciones ------------------------------------------*/
 /* Estilo de la sección de publicaciones */
+/* ===== Sección de publicaciones ===== */
 .posts {
-    margin-top: 10vh;
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 2vw; 
+    margin-top: 5vh;
     padding: 0;
-}
-
-.postsListaImagen {
-    display: flex;
-    margin-left: 1%;
-}
-
-.postsImg {
-    padding-right: 5%;
-    width: 12%;
-   
-}
-
-.postsListText {
+    width: 30%;
+  }
+  
+  /* Quitar márgenes y lista por defecto */
+  .posts ul {
     list-style: none;
-    padding-top: 1%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Configurar la fila de imágenes como grid de 4 columnas y centrar su contenido */
+  .postsListaImagen {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1vw;
+    justify-items: center;
+  }
+  
+  /* Las imágenes se muestran más pequeñas (70% del ancho de su celda) y con proporción fija */
+  .postsImg {
+    width: 70%;
+    aspect-ratio: 1 / 1;       /* Proporción cuadrada */
+    object-fit: cover;         /* Se recortan para llenar la celda sin deformar la imagen */
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  
+  .postsImg:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Configurar la fila de textos como grid de 4 columnas, alineando cada texto al centro */
+  .postsListText {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1vw;
+    margin-top: 0.5vh;
+    text-align: center;
+  }
+  
+  /* Estilo para los textos (ajustado para que sean más pequeños) */
+  .postsListText span {
+    font-size: 9px;
+    color: #333;
+    display: block;
+    margin-top: 0.3rem;
+  }
+  
+
+/* ------------------------------------- Sección de iconos ------------------------------------------*/
+/* Estilo de la sección de iconos */
+.selectorIconos{
+    list-style: none; 
+    margin-left: 26%;
 }
 
-.postsText1 {
-    font-size: 9px;
-    margin-left: 1.5%;
+.lineaSeparadora{
+    list-style: none;
+    width: 15%;
+    height: 20%;
 }
 
-.postsText2 {
-    font-size: 9px;
-    margin-left: 6%;
+.iconos {
+    list-style: none; 
+    padding: 0;
+    display: flex;
+    flex-direction: row; 
+    gap: 10px; 
 }
 
-.postsText3 {
-    font-size: 9px;
-    margin-left: 6%;
+.iconoItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.postsText4 {
-    font-size: 9px;
-    margin-left: 6%;
+.iconoImg {
+    width: 100%; 
+    height: auto;
 }
+
+/* ------------------------------------- Galeria de fotos ------------------------------------------*/
+.gallery {
+    margin-top: 1rem;
+  }
+  
+  .gallery-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  
+  .gallery-container img {
+    width: 100%;
+    aspect-ratio: 1/1;      /* Garantiza proporción cuadrada */
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-container img:hover {
+    transform: scale(1.05);
+  }
 
 /* 📱 -------------------------------------------- Media Query para Tablets y Móviles -----------------------------------*/
-@media (max-width: 1024px) {
+/*@media (max-width: 1024px) {
     header {
         width: 22%;
     }
@@ -270,6 +335,6 @@ main {
     .posts {
         grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
     }
-}
+}*/
 
 
